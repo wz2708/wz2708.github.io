@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Wangshu Zhu — Research</title>
+  <meta name="description" content="Wangshu Zhu — Columbia University EE. Research interests: VLM Evaluation & Reliability; Document/Chart Understanding; Grounding & Tool-Use.">
+  <meta name="author" content="Wangshu Zhu">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0b0c10; --card:#111318; --fg:#e8ebf0; --muted:#aeb6c2; --accent:#6ee7b7;
+      --link:#8ab4f8; --chip:#1a202c; --border:#1f2937;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--fg);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;line-height:1.6;}
+    a{color:var(--link);text-decoration:none} a:hover{text-decoration:underline}
+    .container{max-width:1020px;margin:0 auto;padding:28px 18px 80px}
+    header{display:flex;gap:24px;align-items:center;flex-wrap:wrap;margin-bottom:18px}
+    .avatar{width:80px;height:80px;border-radius:14px;background:#222;object-fit:cover}
+    .title h1{font-size:28px;margin:0 0 6px 0}
+    .title .tagline{color:var(--muted);margin:0;font-size:14px}
+    .nav{display:flex;gap:16px;margin-top:8px;flex-wrap:wrap}
+    .chip{padding:6px 10px;border-radius:999px;background:var(--chip);color:#d1d5db;border:1px solid var(--border);font-size:12px}
+    section{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:18px;margin-top:18px}
+    h2{font-size:18px;margin:0 0 12px 0}
+    .grid{display:grid;grid-template-columns:1fr;gap:12px}
+    @media(min-width:860px){.grid{grid-template-columns:1fr 1fr}}
+    .card{border:1px solid var(--border);border-radius:14px;padding:16px;background:#0f1115}
+    .card h3{margin:0 0 6px 0;font-size:16px}
+    .meta{color:var(--muted);font-size:12px;margin-bottom:8px}
+    .pill{display:inline-block;font-size:11px;padding:4px 8px;border-radius:999px;border:1px solid var(--border);background:#0c0f14;color:#c9ced6;margin-right:6px;margin-top:4px}
+    .metrics{display:flex;gap:10px;flex-wrap:wrap;margin-top:6px}
+    .metrics .k{font-size:12px;color:#cbd5e1;background:#0b121a;border:1px solid var(--border);padding:4px 8px;border-radius:8px}
+    .row{display:flex;gap:10px;flex-wrap:wrap}
+    .btn{display:inline-block;background:#0b121a;border:1px solid var(--border);padding:8px 10px;border-radius:10px;color:#e5e7eb;font-size:13px}
+    .btn:hover{border-color:#334155}
+    .footer{margin-top:24px;color:var(--muted);font-size:12px;text-align:center}
+    .news li{margin-bottom:6px}
+    .mono{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace;font-size:12px;color:#cbd5e1}
+    .hr{height:1px;background:var(--border);margin:14px 0}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <img class="avatar" src="https://avatars.githubusercontent.com/u/00000000?v=4" alt="avatar placeholder">
+      <div class="title">
+        <h1>Wangshu Zhu</h1>
+        <p class="tagline">M.S. Electrical Engineering, Columbia University &nbsp;·&nbsp; Research: <span class="mono">VLM Evaluation & Reliability · Doc/Chart Understanding · Grounding & Tool-Use</span></p>
+        <div class="nav">
+          <a class="btn" href="./Wangshu_Zhu_CV.pdf">CV</a>
+          <a class="btn" href="mailto:wz2708@columbia.edu">Email</a>
+          <a class="btn" href="https://scholar.google.com/">Google Scholar</a>
+          <a class="btn" href="https://github.com/wz2708">GitHub</a>
+          <a class="btn" href="https://www.linkedin.com/">LinkedIn</a>
+        </div>
+      </div>
+    </header>
+
+    <section>
+      <h2>About</h2>
+      <p>
+        I build reliable, auditable vision–language systems and evaluation protocols for high‑stakes settings.
+        My recent work spans <strong>calibration-aware benchmarks</strong> for trajectory prediction, <strong>multi‑agent clinical decision support</strong> with conditional review,
+        <strong>multimodal collision forecasting</strong> with interpretable rationales, and <strong>efficient transformers</strong> with 2D Rotary Position Embeddings.
+      </p>
+      <div class="row">
+        <span class="chip">Calibration & Evaluation</span>
+        <span class="chip">Vision–Language Models</span>
+        <span class="chip">Multimodal Reasoning</span>
+        <span class="chip">Efficient Transformers</span>
+      </div>
+    </section>
+
+    <section>
+      <h2>News</h2>
+      <ul class="news">
+        <li>[Aug 2025] Preparing two manuscripts (FairTraj‑COSMOS; Dual‑RAG) for arXiv/workshop submission.</li>
+        <li>[Jun 2025] Completed DitecT Lab project on interpretable collision forecasting (Nexar dataset).</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Selected Projects</h2>
+      <div class="grid">
+
+        <div class="card">
+          <h3>FairTraj‑COSMOS: Missingness Protocols & Calibration for Trajectory Prediction</h3>
+          <div class="meta">AIDL Lab, Columbia · 2025</div>
+          <p>Formalized four missingness protocols (A/B/C/D) and elevated <em>Brier‑FDE</em> for calibration‑aware evaluation. Showed
+             that protocol choice can invert model rankings and validated the <em>Train‑Rich, Eval‑Pure</em> principle.</p>
+          <div class="metrics">
+            <span class="k">Wayformer/AutoBot/MTR</span>
+            <span class="k">UniTraj spine</span>
+          </div>
+          <div class="row">
+            <a class="btn" href="#">Report</a>
+            <a class="btn" href="#">Slides</a>
+            <a class="btn" href="#">Code</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Dual‑RAG Multi‑Agent Clinical Decision Support</h3>
+          <div class="meta">Graphen Inc. · 2025</div>
+          <p>Built a reception→doctor→expert‑critic→<strong>conditional reviewer</strong> pipeline with dual retrieval (knowledge + cases).
+             Achieved Top‑1≈96% (MRR≈0.98) on 113/212 cases; unconditional review degraded accuracy, motivating learned triggers.</p>
+          <div class="metrics">
+            <span class="k">Top‑1 96%</span>
+            <span class="k">MRR 0.98</span>
+          </div>
+          <div class="row">
+            <a class="btn" href="#">Manuscript</a>
+            <a class="btn" href="#">Slides</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Interpretable Multimodal Collision Prediction</h3>
+          <div class="meta">DitecT Lab, Columbia · 2025</div>
+          <p>Converted detections, masks, depth and flow into dialogue‑style prompts for a VLM to perform temporal collision forecasting with human‑readable rationales.
+             Early‑warning mAP=0.69 (0.5s) / 0.61 (1.0s); ECE≈27% on Nexar.</p>
+          <div class="metrics">
+            <span class="k">mAP 0.69/0.61</span>
+            <span class="k">ECE 27%</span>
+          </div>
+          <div class="row">
+            <a class="btn" href="#">Report</a>
+            <a class="btn" href="#">Code</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>2D‑RoPE for Performer: Efficient High‑Resolution Vision Transformers</h3>
+          <div class="meta">Graduate Research, Columbia · 2024</div>
+          <p>Unified 2D rotary embeddings (axial and mixed) within Performer’s FAVOR+ to retain O(N) efficiency while improving spatial fidelity.
+             Observed +1.8 pp Top‑1 on ImageNet‑1K with ~25% lower memory vs. baseline Performer.</p>
+          <div class="metrics">
+            <span class="k">+1.8 pp Top‑1</span>
+            <span class="k">‑25% memory</span>
+          </div>
+          <div class="row">
+            <a class="btn" href="#">Report</a>
+            <a class="btn" href="#">Code</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section>
+      <h2>Publications & Manuscripts</h2>
+      <ul>
+        <li><strong>FairTraj‑COSMOS</strong> — Manuscript in preparation (evaluation under missingness; calibration with Brier‑FDE).</li>
+        <li><strong>Dual‑RAG</strong> — Manuscript in preparation (multi‑agent clinical decision with conditional review).</li>
+        <li>Earlier papers (unrelated to current focus) available upon request.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Contact</h2>
+      <p>Email: <a href="mailto:wz2708@columbia.edu">wz2708@columbia.edu</a> &nbsp;·&nbsp; GitHub: <a href="https://github.com/wz2708">wz2708</a></p>
+    </section>
+
+    <div class="footer">
+      © <span id="y"></span> Wangshu Zhu. Last updated automatically when deployed.
+    </div>
+  </div>
+  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+</body>
+</html>
