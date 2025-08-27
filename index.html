@@ -9,37 +9,79 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
   <style>
-    :root{
-      --bg:#0b0c10; --panel:#111318; --fg:#e8ebf0; --muted:#aeb6c2; --accent:#6ee7b7;
-      --link:#8ab4f8; --chip:#0f1623; --border:#1f2937; --card:#0e1117;
-    }
-    *{box-sizing:border-box}
-    html,body{margin:0;padding:0;background:var(--bg);color:var(--fg);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;line-height:1.65}
-    a{color:var(--link);text-decoration:none} a:hover{text-decoration:underline}
-    .container{max-width:1024px;margin:0 auto;padding:28px 18px 80px}
-    header{display:flex;align-items:center;gap:20px;flex-wrap:wrap}
-    .avatar{width:92px;height:92px;border-radius:16px;background:#222;object-fit:cover}
-    h1{font-size:30px;margin:0}
-    .tagline{margin:6px 0 0 0;color:var(--muted);font-size:14px}
-    .btn{display:inline-block;padding:8px 12px;border-radius:10px;border:1px solid var(--border);background:#0b121a;color:#e5e7eb;font-size:13px}
-    .btn:hover{border-color:#334155}
-    .nav{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}
-    section{background:var(--panel);border:1px solid var(--border);border-radius:16px;padding:18px;margin-top:18px}
-    h2{font-size:18px;margin:0 0 12px 0}
-    .chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
-    .chip{padding:6px 10px;border-radius:999px;background:var(--chip);border:1px solid var(--border);color:#cbd5e1;font-size:12px}
-    .grid{display:grid;grid-template-columns:1fr;gap:12px}
-    @media(min-width:860px){.grid{grid-template-columns:1fr 1fr}}
-    .card{border:1px solid var(--border);border-radius:14px;background:var(--card);padding:16px}
-    .card h3{margin:0 0 6px 0;font-size:16px}
-    .meta{color:var(--muted);font-size:12px;margin-bottom:8px}
-    .metrics{display:flex;gap:10px;flex-wrap:wrap;margin-top:8px}
-    .k{font-size:12px;color:#cbd5e1;background:#0b121a;border:1px solid var(--border);padding:4px 8px;border-radius:8px}
-    .row{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}
-    ul.news{padding-left:18px;margin:0}
-    ul.news li{margin:6px 0}
-    footer{margin-top:22px;color:var(--muted);font-size:12px;text-align:center}
-    .mono{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace;font-size:12px;color:#cbd5e1}
+    :root {
+  --bg:#f9f9f9; --panel:#ffffff; --fg:#222; --muted:#555; 
+  --accent:#2563eb; --link:#1d4ed8; --chip:#f1f5f9; --border:#e5e7eb; --card:#ffffff;
+}
+
+html,body {
+  margin:0; padding:0;
+  background:var(--bg); color:var(--fg);
+  font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+  line-height:1.65;
+}
+
+section {
+  background:var(--panel);
+  border:1px solid var(--border);
+  border-radius:16px;
+  padding:28px;
+  margin-top:28px;
+}
+
+h2 { font-size:20px; margin:0 0 20px 0; }
+
+/* Projects layout */
+.project {
+  display:flex;
+  align-items:flex-start;
+  margin-bottom:40px;
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:14px;
+  overflow:hidden;
+  box-shadow:0 2px 8px rgba(0,0,0,0.05);
+}
+
+.project:nth-child(even) { flex-direction:row-reverse; }
+
+.proj-img {
+  width:40%;
+  object-fit:cover;
+  min-height:200px;
+  background:#ddd;
+}
+
+.proj-content {
+  padding:20px;
+  width:60%;
+}
+
+.proj-content h3 {
+  margin:0 0 10px 0;
+  font-size:18px;
+  color:#111;
+}
+
+.proj-content p { margin-bottom:12px; color:#333; }
+
+.keywords span {
+  display:inline-block;
+  background:var(--chip);
+  color:#111;
+  padding:5px 10px;
+  border-radius:8px;
+  margin:0 6px 6px 0;
+  font-size:13px;
+}
+
+.links a {
+  margin-right:14px;
+  text-decoration:none;
+  color:var(--link);
+  font-weight:500;
+}
+
   </style>
 </head>
 <body>
@@ -85,70 +127,57 @@
       </ul>
     </section> -->
 
-    <section>
-      <h2>Selected Projects</h2>
-      <div class="grid">
+<section>
+  <h2>Selected Projects</h2>
 
-        <div class="card">
-          <h3>FairTraj-COSMOS: Missingness Protocols & Calibration for Trajectory Prediction</h3>
-          <div class="meta">AIDL Lab, Columbia · 2025</div>
-          <p>
-            Formalized four missingness protocols (A/B/C/D) and elevated <em>Brier-FDE</em> for calibration-aware evaluation.
-            Built a unified training/evaluation spine (AutoBot, Wayformer, MTR) and showed that protocol choice can invert
-            model rankings, validating the <em>Train-Rich, Eval-Pure</em> principle.
-          </p>
-          <div class="metrics">
-            <span class="k">UniTraj spine</span><span class="k">Brier-FDE</span>
-          </div>
-          <div class="row">
-            <a class="btn" href="https://github.com/wz2708/FairTraj_COSMOS/blob/main/docs/FairTraj.pdf">Report</a><a class="btn" href="https://github.com/wz2708/FairTraj_COSMOS/blob/main/docs/FairTraj.pptx">Slides</a><a class="btn" href="https://github.com/wz2708/FairTraj_COSMOS">Code</a>
-          </div>
-        </div>
-
-        <div class="card">
-          <h3>Dual-RAG: Multi-Agent Clinical Decision Support with Conditional Review</h3>
-          <div class="meta">Graphen Inc. · 2025</div>
-          <p>
-            Designed a clinical pipeline (reception → general doctor → expert–critic → <strong>conditional reviewer</strong>)
-            with dual retrieval (knowledge graph + case memory). Achieved Top-1≈96% / MRR≈0.98 on 113/212 cases; unconditional
-            review degraded accuracy, motivating learned triggers and auditable evidence chains.
-          </p>
-          <div class="metrics"><span class="k">Top-1 96%</span><span class="k">MRR 0.98</span></div>
-          <div class="row">
-            <a class="btn" href="https://github.com/wz2708/MultiAgent_Diagnostic_Assistant/blob/main/docs/Technical_report.pdf">Report</a><a class="btn" href="https://github.com/wz2708/MultiAgent_Diagnostic_Assistant/blob/main/docs/Diagnostic_MultiAgents.pptx">Slides</a><a class="btn" href="https://github.com/wz2708/MultiAgent_Diagnostic_Assistant">Code</a>
-          </div>
-        </div>
-
-        <div class="card">
-          <h3>Interpretable Multimodal Collision Prediction</h3>
-          <div class="meta">DitecT Lab, Columbia · 2025</div>
-          <p>
-            Converted detections, masks, depth, and optical flow into dialogue-style prompts so a VLM can perform temporal
-            collision forecasting with human-readable rationales. Early-warning performance: mAP=0.69 (0.5s) / 0.61 (1.0s);
-            calibration analysis yields ECE≈27% on Nexar.
-          </p>
-          <div class="metrics"><span class="k">mAP 0.69 / 0.61</span><span class="k">ECE 27%</span></div>
-          <div class="row">
-            <a class="btn" href="https://github.com/wz2708/AutoVideoTrack/blob/main/docs/paper.pdf">Report</a><a class="btn" href="https://github.com/wz2708/AutoVideoTrack">Code</a>
-          </div>
-        </div>
-
-        <div class="card">
-          <h3>2D-RoPE for Performer: Efficient High-Resolution Vision Transformers</h3>
-          <div class="meta">Graduate Research, Columbia · 2024</div>
-          <p>
-            Built a unified 2D RoPE–Performer module by extending rotary embeddings (axial and mixed) and embedding them into
-            FAVOR+ query–key projections, enhancing spatial fidelity while retaining O(N) efficiency. Observed +1.8 pp Top-1
-            with ~25% lower memory on ImageNet-1K vs. baseline Performer.
-          </p>
-          <div class="metrics"><span class="k">+1.8 pp Top-1</span><span class="k">-25% memory</span></div>
-<!--           <div class="row">
-            <a class="btn" href="#">Report</a><a class="btn" href="#">Code</a>
-          </div> -->
-        </div>
-
+  <!-- Project 1 -->
+  <div class="project">
+    <img src="https://via.placeholder.com/400x250" alt="FairTraj Image" class="proj-img"/>
+    <div class="proj-content">
+      <h3>FairTraj-COSMOS: Calibration Protocols for Reliable Trajectory Forecasting</h3>
+      <p>
+        Developed a standardized framework for trajectory prediction under diverse missingness protocols. 
+        Introduced a calibration-aware evaluation metric and unified leading model families into a consistent pipeline. 
+        Demonstrated how protocol design can invert model rankings, motivating a principled paradigm for fair and reproducible benchmarking.
+      </p>
+      <div class="keywords">
+        <span>Trajectory Prediction</span>
+        <span>Reliable AI</span>
+        <span>Benchmarking</span>
       </div>
-    </section>
+      <div class="links">
+        <a href="https://github.com/wz2708/FairTraj_COSMOS/blob/main/docs/FairTraj.pdf">Report</a>
+        <a href="https://github.com/wz2708/FairTraj_COSMOS/blob/main/docs/FairTraj.pptx">Slides</a>
+        <a href="https://github.com/wz2708/FairTraj_COSMOS">Code</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Project 2 -->
+  <div class="project">
+    <img src="https://via.placeholder.com/400x250" alt="Dual-RAG Image" class="proj-img"/>
+    <div class="proj-content">
+      <h3>Dual-RAG: Multi-Agent Clinical Decision Support with Conditional Review</h3>
+      <p>
+        Designed a multi-agent pipeline for clinical decision support, integrating dual retrieval mechanisms (knowledge graph + case memory). 
+        Introduced a conditional review stage that improved diagnostic reliability and enabled auditable evidence chains.
+      </p>
+      <div class="keywords">
+        <span>Multi-Agent Systems</span>
+        <span>Clinical AI</span>
+        <span>Trustworthy AI</span>
+      </div>
+      <div class="links">
+        <a href="https://github.com/wz2708/MultiAgent_Diagnostic_Assistant/blob/main/docs/Technical_report.pdf">Report</a>
+        <a href="https://github.com/wz2708/MultiAgent_Diagnostic_Assistant/blob/main/docs/Diagnostic_MultiAgents.pptx">Slides</a>
+        <a href="https://github.com/wz2708/MultiAgent_Diagnostic_Assistant">Code</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- 继续补 Interpretable VLM 和 2D-RoPE 项目，用同样结构 -->
+</section>
+
 
     <section>
       <h2>Publications & Manuscripts</h2>
