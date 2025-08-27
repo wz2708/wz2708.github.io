@@ -10,78 +10,72 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
-  --bg:#f9f9f9; --panel:#ffffff; --fg:#222; --muted:#555; 
-  --accent:#2563eb; --link:#1d4ed8; --chip:#f1f5f9; --border:#e5e7eb; --card:#ffffff;
-}
+      --bg:#f9f9f9; --panel:#ffffff; --fg:#222; --muted:#555; 
+      --accent:#2563eb; --link:#1d4ed8; --chip:#f1f5f9; --border:#e5e7eb; --card:#ffffff;
+    }
+    *{box-sizing:border-box}
+    html,body{
+      margin:0;padding:0;
+      background:var(--bg);color:var(--fg);
+      font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      line-height:1.65;
+    }
+    a{color:var(--link);text-decoration:none}
+    a:hover{text-decoration:underline}
+    .container{max-width:1024px;margin:0 auto;padding:28px 18px 80px}
+    header{display:flex;align-items:center;gap:20px;flex-wrap:wrap}
+    .avatar{width:92px;height:92px;border-radius:16px;background:#ccc;object-fit:cover}
+    h1{font-size:30px;margin:0}
+    .tagline{margin:6px 0 0 0;color:var(--muted);font-size:14px}
+    .btn{display:inline-block;padding:8px 12px;border-radius:10px;border:1px solid var(--border);background:#f3f4f6;color:#111;font-size:13px}
+    .btn:hover{background:#e5e7eb}
+    .nav{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}
+    section{background:var(--panel);border:1px solid var(--border);border-radius:16px;padding:28px;margin-top:28px}
+    h2{font-size:20px;margin:0 0 20px 0}
 
-html,body {
-  margin:0; padding:0;
-  background:var(--bg); color:var(--fg);
-  font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
-  line-height:1.65;
-}
-
-section {
-  background:var(--panel);
-  border:1px solid var(--border);
-  border-radius:16px;
-  padding:28px;
-  margin-top:28px;
-}
-
-h2 { font-size:20px; margin:0 0 20px 0; }
-
-/* Projects layout */
-.project {
-  display:flex;
-  align-items:flex-start;
-  margin-bottom:40px;
-  background:var(--card);
-  border:1px solid var(--border);
-  border-radius:14px;
-  overflow:hidden;
-  box-shadow:0 2px 8px rgba(0,0,0,0.05);
-}
-
-.project:nth-child(even) { flex-direction:row-reverse; }
-
-.proj-img {
-  width:40%;
-  object-fit:cover;
-  min-height:200px;
-  background:#ddd;
-}
-
-.proj-content {
-  padding:20px;
-  width:60%;
-}
-
-.proj-content h3 {
-  margin:0 0 10px 0;
-  font-size:18px;
-  color:#111;
-}
-
-.proj-content p { margin-bottom:12px; color:#333; }
-
-.keywords span {
-  display:inline-block;
-  background:var(--chip);
-  color:#111;
-  padding:5px 10px;
-  border-radius:8px;
-  margin:0 6px 6px 0;
-  font-size:13px;
-}
-
-.links a {
-  margin-right:14px;
-  text-decoration:none;
-  color:var(--link);
-  font-weight:500;
-}
-
+    /* Project cards */
+    .project {
+      display:flex;
+      align-items:flex-start;
+      margin-bottom:40px;
+      background:var(--card);
+      border:1px solid var(--border);
+      border-radius:14px;
+      overflow:hidden;
+      box-shadow:0 2px 8px rgba(0,0,0,0.05);
+    }
+    .project:nth-child(even){flex-direction:row-reverse}
+    .proj-img {
+      width:40%;min-height:200px;
+      object-fit:cover;
+      background:#ddd;
+    }
+    .proj-content {
+      padding:20px;
+      width:60%;
+    }
+    .proj-content h3 {
+      margin:0 0 10px 0;
+      font-size:18px;
+      color:#111;
+    }
+    .proj-content p {margin-bottom:12px;color:#333}
+    .keywords span{
+      display:inline-block;
+      background:var(--chip);
+      color:#111;
+      padding:5px 10px;
+      border-radius:8px;
+      margin:0 6px 6px 0;
+      font-size:13px;
+    }
+    .links a{
+      margin-right:14px;
+      text-decoration:none;
+      color:var(--link);
+      font-weight:500;
+    }
+    footer{margin-top:22px;color:var(--muted);font-size:12px;text-align:center}
   </style>
 </head>
 <body>
@@ -110,74 +104,103 @@ h2 { font-size:20px; margin:0 0 20px 0; }
         without sacrificing spatial fidelity. I’m eager to explore diverse directions during my PhD and to contribute to
         rigorous, reproducible systems that people can trust.
       </p>
-      <div class="chips">
-        <span class="chip">Vision–Language Modeling</span>
-        <span class="chip">Multimodal Reasoning</span>
-        <span class="chip">Evaluation & Reliability</span>
-        <span class="chip">Efficient Transformers</span>
+      <div class="keywords">
+        <span>Vision–Language Modeling</span>
+        <span>Multimodal Reasoning</span>
+        <span>Evaluation & Reliability</span>
+        <span>Efficient Transformers</span>
       </div>
     </section>
 
-<!--     <section>
-      <h2>News</h2>
-      <ul class="news">
-        <li>[Aug 2025] Drafting two manuscripts (FairTraj-COSMOS; Dual-RAG) for arXiv / workshop submission.</li>
-        <li>[Jun 2025] Submitted Dual-RAG to AMIA 2025 Late-Breaking Paper track.</li>
-        <li>[Mar 2025] Completed interpretable multimodal collision forecasting on Nexar dashcam (DitecT Lab).</li>
-      </ul>
-    </section> -->
+    <section>
+      <h2>Selected Projects</h2>
 
-<section>
-  <h2>Selected Projects</h2>
-
-  <!-- Project 1 -->
-  <div class="project">
-    <img src="https://via.placeholder.com/400x250" alt="FairTraj Image" class="proj-img"/>
-    <div class="proj-content">
-      <h3>FairTraj-COSMOS: Calibration Protocols for Reliable Trajectory Forecasting</h3>
-      <p>
-        Developed a standardized framework for trajectory prediction under diverse missingness protocols. 
-        Introduced a calibration-aware evaluation metric and unified leading model families into a consistent pipeline. 
-        Demonstrated how protocol design can invert model rankings, motivating a principled paradigm for fair and reproducible benchmarking.
-      </p>
-      <div class="keywords">
-        <span>Trajectory Prediction</span>
-        <span>Reliable AI</span>
-        <span>Benchmarking</span>
+      <!-- Project 1 -->
+      <div class="project">
+        <img src="https://via.placeholder.com/400x250" alt="FairTraj Image" class="proj-img"/>
+        <div class="proj-content">
+          <h3>FairTraj-COSMOS: Calibration Protocols for Reliable Trajectory Forecasting</h3>
+          <p>
+            Developed a standardized framework for trajectory prediction under diverse missingness protocols. 
+            Introduced a calibration-aware evaluation metric and unified leading model families into a consistent pipeline. 
+            Demonstrated how protocol design can invert model rankings, motivating a principled paradigm for fair and reproducible benchmarking.
+          </p>
+          <div class="keywords">
+            <span>Trajectory Prediction</span>
+            <span>Reliable AI</span>
+            <span>Benchmarking</span>
+          </div>
+          <div class="links">
+            <a href="https://github.com/wz2708/FairTraj_COSMOS/blob/main/docs/FairTraj.pdf">Report</a>
+            <a href="https://github.com/wz2708/FairTraj_COSMOS/blob/main/docs/FairTraj.pptx">Slides</a>
+            <a href="https://github.com/wz2708/FairTraj_COSMOS">Code</a>
+          </div>
+        </div>
       </div>
-      <div class="links">
-        <a href="https://github.com/wz2708/FairTraj_COSMOS/blob/main/docs/FairTraj.pdf">Report</a>
-        <a href="https://github.com/wz2708/FairTraj_COSMOS/blob/main/docs/FairTraj.pptx">Slides</a>
-        <a href="https://github.com/wz2708/FairTraj_COSMOS">Code</a>
-      </div>
-    </div>
-  </div>
 
-  <!-- Project 2 -->
-  <div class="project">
-    <img src="https://via.placeholder.com/400x250" alt="Dual-RAG Image" class="proj-img"/>
-    <div class="proj-content">
-      <h3>Dual-RAG: Multi-Agent Clinical Decision Support with Conditional Review</h3>
-      <p>
-        Designed a multi-agent pipeline for clinical decision support, integrating dual retrieval mechanisms (knowledge graph + case memory). 
-        Introduced a conditional review stage that improved diagnostic reliability and enabled auditable evidence chains.
-      </p>
-      <div class="keywords">
-        <span>Multi-Agent Systems</span>
-        <span>Clinical AI</span>
-        <span>Trustworthy AI</span>
+      <!-- Project 2 -->
+      <div class="project">
+        <img src="https://via.placeholder.com/400x250" alt="Dual-RAG Image" class="proj-img"/>
+        <div class="proj-content">
+          <h3>Dual-RAG: Multi-Agent Clinical Decision Support with Conditional Review</h3>
+          <p>
+            Designed a multi-agent pipeline for clinical decision support, integrating dual retrieval mechanisms (knowledge graph + case memory). 
+            Introduced a conditional review stage that improved diagnostic reliability and enabled auditable evidence chains.
+          </p>
+          <div class="keywords">
+            <span>Multi-Agent Systems</span>
+            <span>Clinical AI</span>
+            <span>Trustworthy AI</span>
+          </div>
+          <div class="links">
+            <a href="https://github.com/wz2708/MultiAgent_Diagnostic_Assistant/blob/main/docs/Technical_report.pdf">Report</a>
+            <a href="https://github.com/wz2708/MultiAgent_Diagnostic_Assistant/blob/main/docs/Diagnostic_MultiAgents.pptx">Slides</a>
+            <a href="https://github.com/wz2708/MultiAgent_Diagnostic_Assistant">Code</a>
+          </div>
+        </div>
       </div>
-      <div class="links">
-        <a href="https://github.com/wz2708/MultiAgent_Diagnostic_Assistant/blob/main/docs/Technical_report.pdf">Report</a>
-        <a href="https://github.com/wz2708/MultiAgent_Diagnostic_Assistant/blob/main/docs/Diagnostic_MultiAgents.pptx">Slides</a>
-        <a href="https://github.com/wz2708/MultiAgent_Diagnostic_Assistant">Code</a>
+
+      <!-- Project 3 -->
+      <div class="project">
+        <img src="https://via.placeholder.com/400x250" alt="Collision Prediction" class="proj-img"/>
+        <div class="proj-content">
+          <h3>Interpretable Multimodal Collision Prediction</h3>
+          <p>
+            Built a vision–language pipeline that converts detections, masks, depth, and optical flow into dialogue-style prompts. 
+            Enabled temporal collision forecasting with human-readable rationales, bridging perception with interpretable decision making. 
+            Demonstrated the value of calibration analysis for safety-critical deployment in autonomous driving contexts.
+          </p>
+          <div class="keywords">
+            <span>Vision–Language Models</span>
+            <span>Autonomous Driving</span>
+            <span>Interpretability</span>
+          </div>
+          <div class="links">
+            <a href="https://github.com/wz2708/AutoVideoTrack/blob/main/docs/paper.pdf">Report</a>
+            <a href="https://github.com/wz2708/AutoVideoTrack">Code</a>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
 
-  <!-- 继续补 Interpretable VLM 和 2D-RoPE 项目，用同样结构 -->
-</section>
+      <!-- Project 4 -->
+      <div class="project">
+        <img src="https://via.placeholder.com/400x250" alt="2D-RoPE Performer" class="proj-img"/>
+        <div class="proj-content">
+          <h3>2D-RoPE for Performer: Efficient High-Resolution Vision Transformers</h3>
+          <p>
+            Extended rotary embeddings into a 2D Performer module, enhancing spatial fidelity while retaining linear-time complexity. 
+            Integrated the design into FAVOR+ query–key projections and validated efficiency on large-scale benchmarks. 
+            Highlighted the trade-offs between architectural simplicity and representational power in efficient transformers.
+          </p>
+          <div class="keywords">
+            <span>Efficient Transformers</span>
+            <span>Representation Learning</span>
+            <span>Computer Vision</span>
+          </div>
+        </div>
+      </div>
 
+    </section>
 
     <section>
       <h2>Publications & Manuscripts</h2>
