@@ -36,7 +36,7 @@
     /* Project cards */
     .project {
       display:flex;
-      align-items:flex-start;
+      align-items:center;
       margin-bottom:40px;
       background:var(--card);
       border:1px solid var(--border);
@@ -45,10 +45,19 @@
       box-shadow:0 2px 8px rgba(0,0,0,0.05);
     }
     .project:nth-child(even){flex-direction:row-reverse}
-    .proj-img {
+/*     .proj-img {
       width:40%;min-height:200px;
       object-fit:cover;
       background:#ddd;
+    } */
+    .proj-img {
+      max-width: 220px;     
+      max-height: 180px;    
+      width: auto;
+      height: auto;
+      object-fit: contain; 
+      border-radius: 8px;
+      flex-shrink: 0;     
     }
     .proj-content {
       padding:20px;
