@@ -1,148 +1,78 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Wangshu Zhu — PhD Applicant</title>
-  <meta name="description" content="Wangshu Zhu — Columbia University EE. Broad interests in trustworthy and efficient ML, vision–language modeling, and multimodal reasoning.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <meta name="description" content="Wangshu Zhu — Columbia University EE. Trustworthy & efficient ML, vision–language modeling, multimodal reasoning." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet" />
   <style>
-    :root {
-      --bg:#f9f9f9; --panel:#ffffff; --fg:#222; --muted:#555; 
-      --accent:#2563eb; --link:#1d4ed8; --chip:#f1f5f9; --border:#e5e7eb; --card:#ffffff;
+    :root{
+      --bg:#f7f8fa; --panel:#ffffff; --fg:#222; --muted:#58606b;
+      --border:#e6e8ee; --link:#1d4ed8; --chip:#f1f5f9;
+      --shadow:0 2px 10px rgba(0,0,0,.06);
     }
     *{box-sizing:border-box}
-    html,body{
-      margin:0;padding:0;
-      background:var(--bg);color:var(--fg);
-      font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
-      line-height:1.65;
-    }
-    a{color:var(--link);text-decoration:none}
-    a:hover{text-decoration:underline}
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--fg);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;line-height:1.65}
+    a{color:var(--link);text-decoration:none} a:hover{text-decoration:underline}
     .container{max-width:1024px;margin:0 auto;padding:28px 18px 80px}
     header{display:flex;align-items:center;gap:20px;flex-wrap:wrap}
-    .avatar{width:92px;height:92px;border-radius:16px;background:#ccc;object-fit:cover}
-    h1{font-size:30px;margin:0}
-    .tagline{margin:6px 0 0 0;color:var(--muted);font-size:14px}
-    .btn{display:inline-block;padding:8px 12px;border-radius:10px;border:1px solid var(--border);background:#f3f4f6;color:#111;font-size:13px}
-    .btn:hover{background:#e5e7eb}
+    .avatar{width:92px;height:92px;border-radius:16px;background:#cfd4db;object-fit:cover}
+    h1{margin:0;font-size:30px}
+    .tagline{margin:6px 0 0;color:var(--muted);font-size:14px}
     .nav{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}
-    section{background:var(--panel);border:1px solid var(--border);border-radius:16px;padding:28px;margin-top:28px}
+    .btn{display:inline-block;padding:8px 12px;border-radius:10px;border:1px solid var(--border);background:#f3f5f8;color:#111;font-size:13px}
+    .btn:hover{background:#e9edf5}
+    section{background:var(--panel);border:1px solid var(--border);border-radius:16px;padding:28px;margin-top:28px;box-shadow:var(--shadow)}
     h2{font-size:20px;margin:0 0 20px 0}
-
-    /* Project cards */
-    .project {
-      display:flex;
-      align-items:center;
-      margin-bottom:40px;
-      background:var(--card);
+    /* ------- Project cards ------- */
+    .project{
+      display:grid;
+      grid-template-columns:1fr;  
+      gap:20px;
       border:1px solid var(--border);
       border-radius:14px;
-      overflow:hidden;
-      box-shadow:0 2px 8px rgba(0,0,0,0.05);
+      background:#fff;
+      box-shadow:var(--shadow);
+      padding:20px;               
+      margin-bottom:24px;
     }
-    .project:nth-child(even){flex-direction:row-reverse}
-/*     .proj-img {
-      width:40%;min-height:200px;
-      object-fit:cover;
-      background:#ddd;
-    } */
-    .proj-img {
-      max-width: 220px;     
-      max-height: 180px;    
-      width: auto;
-      height: auto;
-      object-fit: contain; 
-      border-radius: 8px;
-      flex-shrink: 0;     
+    .project.has-img{             
+      grid-template-columns:1fr 320px;
     }
-    .proj-content {
-      padding:20px;
-      width:60%;
+    .project.has-img.img-left{     
+      grid-template-columns:320px 1fr;
     }
-    .proj-content h3 {
-      margin:0 0 10px 0;
-      font-size:18px;
-      color:#111;
+    .proj-media{align-self:center} 
+    .proj-img{
+      width:100%;
+      max-height:200px;           
+      object-fit:contain;      
+      display:block;
+      border-radius:10px;
+      background:#f6f7fa;
+      padding:6px;                
+      box-sizing:border-box;
     }
-    .proj-content p {margin-bottom:12px;color:#333}
+    .proj-content h3{margin:0 0 10px 0;font-size:18px;color:#111}
+    .proj-content p{margin:0 0 12px 0;color:#333}
+    .keywords{margin-top:8px}
     .keywords span{
-      display:inline-block;
-      background:var(--chip);
-      color:#111;
-      padding:5px 10px;
-      border-radius:8px;
-      margin:0 6px 6px 0;
-      font-size:13px;
+      display:inline-block;background:var(--chip);color:#111;
+      padding:6px 10px;border-radius:8px;margin:6px 8px 0 0;font-size:13px
     }
-    .links a{
-      margin-right:14px;
-      text-decoration:none;
-      color:var(--link);
-      font-weight:500;
-    }
-    footer{margin-top:22px;color:var(--muted);font-size:12px;text-align:center}
-    /* ---- Project card 基础 ---- */
-.project {
-  display: grid;
-  grid-template-columns: 1fr;    /* 默认单列：无图时使用 */
-  gap: 20px;
-  border: 1px solid #e5e7eb;
-  border-radius: 14px;
-  background: #fff;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-  padding: 20px;                 /* 统一四周留白 */
-}
-
-/* 有图时：两列布局（文字列 + 图片列） */
-.project.has-img {
-  grid-template-columns: 1fr 320px; /* 右侧固定 320px 图片列，你可改成 300~360px */
-}
-
-/* 如果想交替左右，可加 .img-left，将图片放左边 */
-.project.has-img.img-left {
-  grid-template-columns: 320px 1fr;
-}
-
-/* 图片容器，确保与卡片边框等距 */
-.proj-media {
-  align-self: center;             /* 垂直居中图片列 */
-}
-
-/* 图片本体：等比缩放、不变形、等距内边距 */
-.proj-img {
-  width: 100%;
-  max-height: 200px;              /* 统一高度，看起来大小一致 */
-  object-fit: contain;            /* 不裁剪不拉伸 */
-  display: block;
-  border-radius: 10px;
-  background: #f3f4f6;
-  padding: 6px;                   /* 让图片不贴边框 */
-  box-sizing: border-box;
-}
-
-/* 文字列与边框的距离用卡片的 padding 已统一，无需额外 margin */
-.proj-content h3 { margin: 0 0 10px 0; font-size: 18px; color: #111; }
-.proj-content p  { margin: 0 0 12px 0; color: #333; }
-
-/* 关键词标签 */
-.keywords span{
-  display:inline-block; background:#f1f5f9; color:#111;
-  padding:5px 10px; border-radius:8px; margin:8px 8px 0 0; font-size:13px;
-}
-
-/* 链接区 */
-.links a{ margin-right:14px; text-decoration:none; color:#1d4ed8; font-weight:500; }
-
+    .links{margin-top:10px}
+    .links a{margin-right:14px;font-weight:500}
+    footer{margin-top:22px;color:#8a94a2;font-size:12px;text-align:center}
   </style>
 </head>
 <body>
   <div class="container">
+
     <header>
-      <img class="avatar" src="./zws.jpg" alt="avatar placeholder">
+      <img class="avatar" src="./zws.jpg" alt="avatar" />
       <div>
         <h1>Wangshu Zhu</h1>
         <p class="tagline">M.S. Electrical Engineering, Columbia University · New York, USA</p>
@@ -160,10 +90,10 @@
       <p>
         I am a second-year M.S. student in Electrical Engineering at Columbia University. My broad interests lie in
         <strong>trustworthy and efficient machine learning</strong> across vision, language, and multimodal reasoning.
-        I enjoy problems that connect research with deployment: evaluation protocols that truly reflect reliability,
-        interpretable vision–language inference in dynamic environments, and efficient transformer architectures that scale
-        without sacrificing spatial fidelity. I’m eager to explore diverse directions during my PhD and to contribute to
-        rigorous, reproducible systems that people can trust.
+        I enjoy problems that connect research with deployment: evaluation protocols that reflect reliability, interpretable
+        vision–language inference in dynamic environments, and efficient transformer architectures that scale without
+        sacrificing spatial fidelity. I’m eager to explore diverse directions during my PhD and contribute to rigorous,
+        reproducible systems that people can trust.
       </p>
       <div class="keywords">
         <span>Vision–Language Modeling</span>
@@ -176,103 +106,94 @@
     <section>
       <h2>Selected Projects</h2>
 
-      <!-- Project 1 -->
-      <div class="project">
-        <div class="project has-img">
-          <div class="proj-media">
-            <img src="./wayformer.png" alt="FairTraj Image" class="proj-img"/>
+      <div class="project has-img">
+        <div class="proj-content">
+          <h3>FairTraj-COSMOS: Calibration Protocols for Reliable Trajectory Forecasting</h3>
+          <p>
+            Developed a standardized framework for trajectory prediction under diverse missingness protocols.
+            Introduced a calibration-aware evaluation metric and unified leading model families into a consistent pipeline.
+            Demonstrated how protocol design can invert model rankings, motivating a principled paradigm for fair and
+            reproducible benchmarking.
+          </p>
+          <div class="keywords">
+            <span>Trajectory Prediction</span><span>Reliable AI</span><span>Benchmarking</span>
           </div>
-          <div class="proj-content">
-            <h3>FairTraj-COSMOS: Calibration Protocols for Reliable Trajectory Forecasting</h3>
-            <p>
-              Developed a standardized framework for trajectory prediction under diverse missingness protocols. 
-              Introduced a calibration-aware evaluation metric and unified leading model families into a consistent pipeline. 
-              Demonstrated how protocol design can invert model rankings, motivating a principled paradigm for fair and reproducible benchmarking.
-            </p>
-            <div class="keywords">
-              <span>Trajectory Prediction</span>
-              <span>Reliable AI</span>
-              <span>Benchmarking</span>
-            </div>
-            <div class="links">
-              <a href="https://github.com/wz2708/FairTraj_COSMOS/blob/main/docs/FairTraj.pdf">Report</a>
-              <a href="https://github.com/wz2708/FairTraj_COSMOS/blob/main/docs/FairTraj.pptx">Slides</a>
-              <a href="https://github.com/wz2708/FairTraj_COSMOS">Code</a>
-            </div>
+          <div class="links">
+            <a href="https://github.com/wz2708/FairTraj_COSMOS/blob/main/docs/FairTraj.pdf">Report</a>
+            <a href="https://github.com/wz2708/FairTraj_COSMOS/blob/main/docs/FairTraj.pptx">Slides</a>
+            <a href="https://github.com/wz2708/FairTraj_COSMOS">Code</a>
           </div>
+        </div>
+        <div class="proj-media">
+
+          <img class="proj-img"
+               src="./wayformer.png"
+               alt="FairTraj figure" />
         </div>
       </div>
 
-      <!-- Project 2 -->
-      <div class="project">
-        <div class="project has-img img-left">
-          <div class="proj-media">
-            <img src="./multiagents.png" alt="Dual-RAG Image" class="proj-img"/>
+      <div class="project has-img img-left">
+        <div class="proj-content">
+          <h3>Dual-RAG: Multi-Agent Clinical Decision Support with Conditional Review</h3>
+          <p>
+            Designed a multi-agent pipeline for clinical decision support, integrating dual retrieval (knowledge graph + case memory).
+            Introduced a conditional review stage that improved diagnostic reliability and enabled auditable evidence chains for
+            trustworthy healthcare AI.
+          </p>
+          <div class="keywords">
+            <span>Multi-Agent Systems</span><span>Clinical AI</span><span>Trustworthy AI</span>
           </div>
-          <div class="proj-content">
-            <h3>Dual-RAG: Multi-Agent Clinical Decision Support with Conditional Review</h3>
-            <p>
-              Designed a multi-agent pipeline for clinical decision support, integrating dual retrieval mechanisms (knowledge graph + case memory). 
-              Introduced a conditional review stage that improved diagnostic reliability and enabled auditable evidence chains.
-            </p>
-            <div class="keywords">
-              <span>Multi-Agent Systems</span>
-              <span>Clinical AI</span>
-              <span>Trustworthy AI</span>
-            </div>
-            <div class="links">
-              <a href="https://github.com/wz2708/MultiAgent_Diagnostic_Assistant/blob/main/docs/Technical_report.pdf">Report</a>
-              <a href="https://github.com/wz2708/MultiAgent_Diagnostic_Assistant/blob/main/docs/Diagnostic_MultiAgents.pptx">Slides</a>
-              <a href="https://github.com/wz2708/MultiAgent_Diagnostic_Assistant">Code</a>
-            </div>
+          <div class="links">
+            <a href="https://github.com/wz2708/MultiAgent_Diagnostic_Assistant/blob/main/docs/Technical_report.pdf">Report</a>
+            <a href="https://github.com/wz2708/MultiAgent_Diagnostic_Assistant/blob/main/docs/Diagnostic_MultiAgents.pptx">Slides</a>
+            <a href="https://github.com/wz2708/MultiAgent_Diagnostic_Assistant">Code</a>
           </div>
+        </div>
+        <div class="proj-media">
+          <img class="proj-img"
+               src="./multiagents.png"
+               alt="Collision project figure"
+               onerror="this.src='https://via.placeholder.com/400x250?text=Project+Image';" />
+        </div>
+      </div>
+      
+      <div class="project has-img">
+        <div class="proj-content">
+          <h3>Interpretable Multimodal Collision Prediction</h3>
+          <p>
+            Built a vision–language pipeline that converts detections, masks, depth, and optical flow into dialogue-style prompts.
+            Enabled temporal collision forecasting with human-readable rationales, bridging perception with interpretable decision
+            making for safety-critical deployment.
+          </p>
+          <div class="keywords">
+            <span>Vision–Language Models</span><span>Autonomous Driving</span><span>Interpretability</span>
+          </div>
+          <div class="links">
+            <a href="https://github.com/wz2708/AutoVideoTrack/blob/main/docs/paper.pdf">Report</a>
+            <a href="https://github.com/wz2708/AutoVideoTrack">Code</a>
+          </div>
+        </div>
+        <div class="proj-media">
+          <img class="proj-img"
+               src="./detection.png"
+               alt="Collision project figure"
+               onerror="this.src='https://via.placeholder.com/400x250?text=Project+Image';" />
         </div>
       </div>
 
-      <!-- Project 3 -->
-      <div class="project">
-        <div class="project has-img">
-          <div class="proj-media">
-            <img src="./detection.png" alt="Collision Prediction" class="proj-img"/>
-          </div>
-          <div class="proj-content">
-            <h3>Interpretable Multimodal Collision Prediction</h3>
-            <p>
-              Built a vision–language pipeline that converts detections, masks, depth, and optical flow into dialogue-style prompts. 
-              Enabled temporal collision forecasting with human-readable rationales, bridging perception with interpretable decision making. 
-              Demonstrated the value of calibration analysis for safety-critical deployment in autonomous driving contexts.
-            </p>
-            <div class="keywords">
-              <span>Vision–Language Models</span>
-              <span>Autonomous Driving</span>
-              <span>Interpretability</span>
-            </div>
-            <div class="links">
-              <a href="https://github.com/wz2708/AutoVideoTrack/blob/main/docs/paper.pdf">Report</a>
-              <a href="https://github.com/wz2708/AutoVideoTrack">Code</a>
-            </div>
-          </div>
+      <div class="project has-img img-left">
+        <div class="proj-media">
+          <img class="proj-img" src="./rope.png" alt="2D-RoPE plot" onerror="this.src='https://via.placeholder.com/400x250?text=2D-RoPE+Image';" />
         </div>
-      </div>
-
-      <!-- Project 4 -->
-      <div class="project">
-        <div class="project has-img img-left">
-          <div class="proj-media">
-            <img src="./rope.png" alt="2D-RoPE Performer" class="proj-img"/>
-          </div>
-          <div class="proj-content">
-            <h3>2D-RoPE for Performer: Efficient High-Resolution Vision Transformers</h3>
-            <p>
-              Extended rotary embeddings into a 2D Performer module, enhancing spatial fidelity while retaining linear-time complexity. 
-              Integrated the design into FAVOR+ query–key projections and validated efficiency on large-scale benchmarks. 
-              Highlighted the trade-offs between architectural simplicity and representational power in efficient transformers.
-            </p>
-            <div class="keywords">
-              <span>Efficient Transformers</span>
-              <span>Representation Learning</span>
-              <span>Computer Vision</span>
-            </div>
+        <div class="proj-content">
+          <h3>2D-RoPE for Performer: Efficient High-Resolution Vision Transformers</h3>
+          <p>
+            Extended rotary embeddings into a 2D Performer module, enhancing spatial fidelity while retaining linear-time complexity.
+            Integrated the design into FAVOR+ query–key projections and validated efficiency on large-scale benchmarks, highlighting
+            the trade-offs between architectural simplicity and representational power in efficient transformers.
+          </p>
+          <div class="keywords">
+            <span>Efficient Transformers</span><span>Representation Learning</span><span>Computer Vision</span>
           </div>
         </div>
       </div>
@@ -290,10 +211,15 @@
 
     <section>
       <h2>Contact</h2>
-      <p>Email: <a href="mailto:wz2708@columbia.edu">wz2708@columbia.edu</a> · GitHub: <a href="https://github.com/wz2708">wz2708</a></p>
+      <p>
+        Email: <a href="mailto:wz2708@columbia.edu">wz2708@columbia.edu</a> ·
+        GitHub: <a href="https://github.com/wz2708">wz2708</a>
+      </p>
     </section>
 
-    <footer>© <span id="y"></span> Wangshu Zhu</footer>
+    <footer>
+      © <span id="y"></span> Wangshu Zhu
+    </footer>
   </div>
   <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
 </body>
