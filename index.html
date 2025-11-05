@@ -72,134 +72,226 @@
   <div class="container">
 
     <header>
-      <img class="avatar" src="./zws.jpg" alt="avatar" />
+      <img class="avatar" src="./zws.jpg" alt="Wangshu Zhu portrait" />
       <div>
         <h1>Wangshu Zhu</h1>
-        <p class="tagline">M.S. Electrical Engineering, Columbia University · New York, USA</p>
+        <p class="tagline">M.S. in Electrical Engineering, Columbia University · New York, USA</p>
+
         <div class="nav">
-          <a class="btn" href="./WangshuZhu_CV.pdf">CV</a>
+          <a class="btn" href="./WangshuZhu_CV.pdf" target="_blank">CV</a>
           <a class="btn" href="mailto:wz2708@columbia.edu">Email</a>
-          <a class="btn" href="https://github.com/wz2708">GitHub</a>
-          <a class="btn" href="https://www.linkedin.com/in/wangshu-zhu-b8aab9325/">LinkedIn</a>
+          <a class="btn" href="https://scholar.google.com/citations?user=oJAOF7UAAAAJ&hl=en&authuser=1" target="_blank">Google Scholar</a>
+          <a class="btn" href="https://github.com/wz2708" target="_blank">GitHub</a>
+          <a class="btn" href="https://wz2708.github.io/" target="_blank">Website</a>
+          <a class="btn" href="https://www.linkedin.com/in/wangshu-zhu-b8aab9325/" target="_blank">LinkedIn</a>
         </div>
-      </div>
+  </div>
+
     </header>
 
+    
     <section>
       <h2>About</h2>
       <p>
-        I am a second-year M.S. student in Electrical Engineering at Columbia University. My broad interests lie in
-        <strong>trustworthy and efficient machine learning</strong> across vision, language, and multimodal reasoning.
-        I enjoy problems that connect research with deployment: evaluation protocols that reflect reliability, interpretable
-        vision–language inference in dynamic environments, and efficient transformer architectures that scale without
-        sacrificing spatial fidelity. I’m eager to explore diverse directions during my PhD and contribute to rigorous,
-        reproducible systems that people can trust.
+      I am a second-year M.S. student in Electrical Engineering at Columbia University.
+      </p>
+
+      <p>
+      My research focuses on developing <strong>reasoning-capable foundation models</strong> — unifying architectural innovation, training design, and multi-agent collaboration to build adaptive and interpretable intelligence systems.
+      I am particularly interested in bridging <strong>model-level learning</strong> and <strong>system-level reasoning</strong>, where foundation models can not only perceive but also plan, revise, and validate their own outputs in real-world environments.
+      </p>
+
+      <p>
+      Recent projects include <strong>AutoClimDS</strong>, a knowledge-grounded multi-agent framework that enables autonomous reasoning and data-driven discovery for scientific workflows, and <strong>SegmentFusion</strong>, a write-then-revise training framework that couples autoregressive drafting with diffusion-based refinement for controllable reasoning.
+      Together, these works reflect my broader aim to develop AI systems that can <strong>learn, reason, and self-correct across modalities and contexts</strong> — advancing toward generalizable, trustworthy, and truly agentic intelligence.
+      </p>
+
+      <div class="keywords">
+        <span>Agentic AI</span>
+        <span>Vision Intelligence</span>
+        <span>Multimodal Reasoning</span>
+      </div>
+    </section>
+
+<section>
+  <h2>Selected Projects</h2>
+
+  <!-- ===== Group A: Agentic & Reasoning AI ===== -->
+  <h3 style="margin:8px 0 14px 0;color:#374151;font-size:16px;">Agentic & Reasoning AI</h3>
+
+  <!-- AutoClimDS -->
+  <div class="project has-img">
+    <div class="proj-content">
+      <h3>AutoClimDS — Knowledge-Grounded Multi-Agent Scientific Reasoning</h3>
+      <p style="margin:4px 0 8px;">
+        Built a <strong>knowledge-grounded multi-agent framework</strong> that plans data acquisition, executes analyses, and explains findings from natural-language prompts. 
+        Uses a domain memory (KG + tool registry) and <strong>ReAct-style orchestration</strong> to ensure provenance, repeatability, and <strong>auditable reasoning</strong> in scientific workflows.
       </p>
       <div class="keywords">
-        <span>Vision–Language Modeling</span>
-        <span>Multimodal Reasoning</span>
-        <span>Evaluation & Reliability</span>
-        <span>Efficient Transformers</span>
+        <span>Agentic AI</span><span>Multi-Agent</span><span>Scientific Reasoning</span>
       </div>
-    </section>
-
-    <section>
-      <h2>Selected Projects</h2>
-
-      <div class="project has-img">
-        <div class="proj-content">
-          <h3>FairTraj-COSMOS: Calibration Protocols for Reliable Trajectory Forecasting</h3>
-          <p>
-            Developed a standardized framework for trajectory prediction under diverse missingness protocols.
-            Introduced a calibration-aware evaluation metric and unified leading model families into a consistent pipeline.
-            Demonstrated how protocol design can invert model rankings, motivating a principled paradigm for fair and
-            reproducible benchmarking.
-          </p>
-          <div class="keywords">
-            <span>Trajectory Prediction</span><span>Reliable AI</span><span>Benchmarking</span>
-          </div>
-          <div class="links">
-            <a href="https://github.com/wz2708/FairTraj_COSMOS/blob/main/docs/FairTraj.pdf">Report</a>
-            <a href="https://github.com/wz2708/FairTraj_COSMOS/blob/main/docs/FairTraj.pptx">Slides</a>
-            <a href="https://github.com/wz2708/FairTraj_COSMOS">Code</a>
-          </div>
-        </div>
-        <div class="proj-media">
-          <img class="proj-img" src="./unitraj.png" alt="FairTraj figure" />
-        </div>
+      <div class="links">
+        <a href="https://arxiv.org/abs/2509.21553" target="_blank">arXiv</a>
+        <a href="https://github.com/wz2708/AutoClimDS" class="muted">Code</a>
       </div>
+    </div>
+    <div class="proj-media">
+      <img class="proj-img" src="./autoclimds.png" alt="AutoClimDS overview" onerror="this.src='https://via.placeholder.com/400x250?text=AutoClimDS';"/>
+    </div>
+  </div>
 
-      <div class="project has-img img-left">
-        <div class="proj-media">
-          <img class="proj-img" src="./pipeline.jpg" alt="2D-RoPE plot" onerror="this.src='https://via.placeholder.com/400x250?text=2D-RoPE+Image';" />
-        </div>
-        <div class="proj-content">
-          <h3>Dual-RAG: Multi-Agent Clinical Decision Support with Conditional Review</h3>
-          <p>
-            Designed a multi-agent pipeline for clinical decision support, integrating dual retrieval (knowledge graph + case memory).
-            Introduced a conditional review stage that improved diagnostic reliability and enabled auditable evidence chains for
-            trustworthy healthcare AI.
-          </p>
-          <div class="keywords">
-            <span>Multi-Agent Systems</span><span>Clinical AI</span><span>Trustworthy AI</span>
-          </div>
-          <div class="links">
-            <a href="https://github.com/wz2708/MultiAgent_Diagnostic_Assistant/blob/main/docs/Technical_report.pdf">Report</a>
-            <a href="https://github.com/wz2708/MultiAgent_Diagnostic_Assistant/blob/main/docs/Diagnostic_MultiAgents.pptx">Slides</a>
-            <a href="https://github.com/wz2708/MultiAgent_Diagnostic_Assistant">Code</a>
-          </div>
-        </div>
+  <!-- SegmentFusion -->
+  <div class="project has-img img-left">
+    <div class="proj-media">
+      <img class="proj-img" src="./segmentfusion.png" alt="SegmentFusion diagram" onerror="this.src='https://via.placeholder.com/400x250?text=SegmentFusion';"/>
+    </div>
+    <div class="proj-content">
+      <h3>SegmentFusion — “Write-then-Revise” Training for LLMs/VLMs</h3>
+      <p style="margin:4px 0 8px;">
+        Proposed a <strong>write-then-revise</strong> paradigm that combines <strong>autoregressive drafting</strong> and <strong>masked-diffusion refinement</strong> within a single sequence. 
+        A lightweight router aligns losses across AR/MDM segments, improving <strong>reasoning stability</strong>, controllability, and <strong>revision-style interaction</strong>.
+      </p>
+      <div class="keywords">
+        <span>Reasoning LLMs</span><span>Diffusion & AR</span><span>Controllable Generation</span>
       </div>
-      
-      <div class="project has-img">
-        <div class="proj-content">
-          <h3>Interpretable Multimodal Collision Prediction</h3>
-          <p>
-            Built a vision–language pipeline that converts detections, masks, depth, and optical flow into dialogue-style prompts.
-            Enabled temporal collision forecasting with human-readable rationales, bridging perception with interpretable decision
-            making for safety-critical deployment.
-          </p>
-          <div class="keywords">
-            <span>Vision–Language Models</span><span>Autonomous Driving</span><span>Interpretability</span>
-          </div>
-          <div class="links">
-            <a href="https://github.com/wz2708/AutoVideoTrack/blob/main/docs/paper.pdf">Report</a>
-            <a href="https://github.com/wz2708/AutoVideoTrack">Code</a>
-          </div>
-        </div>
-        <div class="proj-media">
-          <img class="proj-img"
-               src="./detection.png"
-               alt="Collision project figure"
-               onerror="this.src='https://via.placeholder.com/400x250?text=Project+Image';" />
-        </div>
+      <div class="links">
+        <!-- <a href="#" class="muted">Preprint (soon)</a> -->
+        <a href="https://github.com/wz2708/SegmentFusion" class="muted">Code (soon)</a>
       </div>
+    </div>
+  </div>
 
-      <div class="project has-img img-left">
-        <div class="proj-media">
-          <img class="proj-img" src="./rope.png" alt="2D-RoPE plot" onerror="this.src='https://via.placeholder.com/400x250?text=2D-RoPE+Image';" />
-        </div>
-        <div class="proj-content">
-          <h3>2D-RoPE for Performer: Efficient High-Resolution Vision Transformers</h3>
-          <p>
-            Extended rotary embeddings into a 2D Performer module, enhancing spatial fidelity while retaining linear-time complexity.
-            Integrated the design into FAVOR+ query–key projections and validated efficiency on large-scale benchmarks, highlighting
-            the trade-offs between architectural simplicity and representational power in efficient transformers.
-          </p>
-          <div class="keywords">
-            <span>Efficient Transformers</span><span>Representation Learning</span><span>Computer Vision</span>
-          </div>
-        </div>
+  <!-- Dual-RAG -->
+  <div class="project has-img">
+    <div class="proj-content">
+      <h3>Clinical Multi-Agent Decision Support System</h3>
+      <p style="margin:4px 0 8px;">
+        Designed a <strong>dual-retrieval pipeline</strong> (biomedical KG + case memory) with a <strong>conditional reviewer</strong> that challenges uncertain drafts and verifies evidence chains. 
+        Achieved strong diagnostic accuracy while improving <strong>interpretability</strong> and uncertainty calibration in <strong>high-stakes</strong> settings.
+      </p>
+      <div class="keywords">
+        <span>Multi-Agent</span><span>Clinical Reasoning</span><span>Trustworthy AI</span>
       </div>
+      <div class="links">
+        <a href="https://github.com/wz2708/MultiAgent_Diagnostic_Assistant/blob/main/docs/Technical_report.pdf" target="_blank">Report</a>
+        <a href="https://github.com/wz2708/MultiAgent_Diagnostic_Assistant/blob/main/docs/Diagnostic_MultiAgents.pptx" target="_blank">Slides</a>
+        <a href="https://github.com/wz2708/MultiAgent_Diagnostic_Assistant" target="_blank">Code</a>
+      </div>
+    </div>
+    <div class="proj-media">
+      <img class="proj-img" src="./pipeline.jpg" alt="Dual-RAG pipeline" onerror="this.src='https://via.placeholder.com/400x250?text=Dual-RAG';"/>
+    </div>
+  </div>
 
-    </section>
+  <!-- ===== Group B: Vision & Behavior / Mobility ===== -->
+  <h3 style="margin:8px 0 14px 0;color:#374151;font-size:16px;">Vision Intelligence</h3>
+
+  <!-- BioTrack -->
+  <div class="project has-img img-left">
+    <div class="proj-media">
+      <img class="proj-img" src="./biotrack.png" alt="BioTrack figure" onerror="this.src='https://via.placeholder.com/400x250?text=BioTrack';"/>
+    </div>
+    <div class="proj-content">
+      <h3>BioTrack — Self-Supervised Behavioral Video Tracking with State-Aware Control</h3>
+      <p style="margin:4px 0 8px;">
+        Built a practical pipeline combining <strong>SAM2</strong> tracking and <strong>YOLO</strong> re-detection with confidence-aware early-stop and resume. 
+        Uses tracked boxes to synthesize occlusion-aware data for targeted fine-tuning, supporting downstream <strong>behavioral-state</strong> modeling.
+      </p>
+      <div class="keywords">
+        <span>Self-Supervised Video</span><span>Behavior Tracking</span><span>ML Ops</span>
+      </div>
+      <div class="links">
+        <!-- optional links -->
+      </div>
+    </div>
+  </div>
+
+  <!-- FairTraj-COSMOS -->
+  <div class="project has-img">
+    <div class="proj-content">
+      <h3>FairTraj-COSMOS — Calibration-Aware Protocols for Reliable Trajectory Forecasting</h3>
+      <p style="margin:4px 0 8px;">
+        Proposed a <strong>calibration-aware evaluation</strong> and standardized missingness protocols that unify model families under a single pipeline. 
+        Showed how protocol design can <strong>invert model rankings</strong>, motivating principled, <strong>reproducible</strong> benchmarking for <strong>intelligent mobility</strong>.
+      </p>
+      <div class="keywords">
+        <span>Trajectory Prediction</span><span>Reliability</span><span>Benchmarking</span>
+      </div>
+      <div class="links">
+        <a href="https://github.com/wz2708/FairTraj_COSMOS/blob/main/docs/FairTraj.pdf" target="_blank">Report</a>
+        <a href="https://github.com/wz2708/FairTraj_COSMOS/blob/main/docs/FairTraj.pptx" target="_blank">Slides</a>
+        <a href="https://github.com/wz2708/FairTraj_COSMOS" target="_blank">Code</a>
+      </div>
+    </div>
+    <div class="proj-media">
+      <img class="proj-img" src="./unitraj.png" alt="FairTraj-COSMOS" onerror="this.src='https://via.placeholder.com/400x250?text=FairTraj';"/>
+    </div>
+  </div>
+
+  <!-- Interpretable Collision Prediction -->
+  <div class="project has-img img-left">
+    <div class="proj-media">
+      <img class="proj-img" src="./detection.png" alt="Collision prediction" onerror="this.src='https://via.placeholder.com/400x250?text=Collision';"/>
+    </div>
+    <div class="proj-content">
+      <h3>Interpretable Multimodal Collision Prediction</h3>
+      <p style="margin:4px 0 8px;">
+        Converted detections, masks, depth, and optical flow into <strong>dialogue-style prompts</strong> for temporal risk forecasting. 
+        Produces <strong>human-readable rationales</strong> that bridge perception and decision-making for safety-critical deployment.
+      </p>
+      <div class="keywords">
+        <span>Vision–Language</span><span>Autonomous Driving</span><span>Interpretability</span>
+      </div>
+      <div class="links">
+        <a href="https://github.com/wz2708/AutoVideoTrack/blob/main/docs/paper.pdf" target="_blank">Report</a>
+        <a href="https://github.com/wz2708/AutoVideoTrack" target="_blank">Code</a>
+      </div>
+    </div>
+  </div>
+</section>
+
 
     <section>
       <h2>Publications & Manuscripts</h2>
-      <ul>
-        <li><strong>Dual-RAG with Conditional Reviewer</strong> — submitted to AMIA 2025 Late-Breaking Paper track.</li>
-        <li><strong>FairTraj-COSMOS</strong> — manuscript in preparation.</li>
-        <li><strong>Earlier work</strong> — unrelated undergraduate publications available upon request.</li>
+
+      <ul style="margin:0 0 12px 0;">
+        <li style="margin-bottom:8px;">
+          <strong>AutoClimDS: Climate Data Science Agentic AI -- A Knowledge Graph is All You Need</strong>. 
+          arXiv, 2025. (<a href="https://arxiv.org/abs/2509.21553" target="_blank">link</a>)
+        </li>
+      </ul>
+
+      <h3 style="margin:18px 0 8px 0;color:#374151;font-size:16px;">Earlier Publications (Undergraduate)</h3>
+      <ul style="margin:0;">
+        <li style="margin-bottom:6px;">Zhu, W. <em>The application and enlightenment of augmented reality technology in social disorders of autistic patients</em>. IITCEE 2023.
+          (<a href="https://ieeexplore.ieee.org/abstract/document/10091063" target="_blank">link</a>) </li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Teaching</h2>
+      <div class="project">
+        <div class="proj-content">
+          <h3>Teaching Assistant — ECBM E4040 Neural Networks and Deep Learning</h3>
+          <p style="margin:4px 0 8px;">
+            Assisted in teaching Columbia’s graduate-level <em>Neural Networks and Deep Learning</em> course, 
+            focusing on <strong>theoretical foundations</strong>, <strong>optimization dynamics</strong>, and 
+            <strong>neural network architectures</strong>. 
+            Responsibilities included leading recitations, designing assignment and exams, 
+            and offering guidance for students on course related questions.
+          </p>
+          <div class="keywords">
+            <span>Deep Learning</span><span>Teaching Assistant</span><span>Columbia University</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Awards & Honors</h2>
+      <ul style="margin:0;">
+        <li><strong>2025 Spring MS Honors Students</strong> — Columbia University, 2025</li>
+        <li><strong>Advanced Master’s Research Specialization</strong> — Columbia University, 2025</li>
       </ul>
     </section>
 
@@ -210,6 +302,7 @@
         GitHub: <a href="https://github.com/wz2708">wz2708</a>
       </p>
     </section>
+
 
     <footer>
       © <span id="y"></span> Wangshu Zhu
